@@ -1,7 +1,7 @@
 # Проект «Киноман»
 
 * Студент: [Никита Крымов](https://up.htmlacademy.ru/ecmascript/16/user/1221143).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Гуляев](https://htmlacademy.ru/profile/dima).
 
 ---
 
