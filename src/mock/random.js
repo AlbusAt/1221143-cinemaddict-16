@@ -10,11 +10,11 @@ function arrayRandElement(arr) {
 }
 
 const getRandomTitle = () => arrayRandElement(FILM_TITLE);
-const getRandomDescriptions = () => arrayRandElement(FILMS_DESCRIPTIONS);
-const getRandomPosters = () => arrayRandElement(FILMS_POSTERS);
+const getRandomDescription = () => arrayRandElement(FILMS_DESCRIPTIONS);
+const getRandomPoster = () => arrayRandElement(FILMS_POSTERS);
 
 export {
   getRandomTitle,
-  getRandomDescriptions,
-  getRandomPosters,
+  getRandomDescription,
+  getRandomPoster,
 };
