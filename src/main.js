@@ -1,10 +1,10 @@
 import { createSiteMenuTemplate } from './view/site-menu-view';
-import { createFilmCardTemplate } from './view/container-card-view';
-import { createUserProfileTemplate } from './view/header-user-view';
+import { createFilmCardTemplate } from './view/film-card-view';
+import { createUserProfileTemplate } from './view/profile-card-view';
 import { createFilmCardElementsTemplate } from './view/movie-card-view';
-import { createButtonShowMoreTemplate } from './view/film-list-show-view';
-import { createPopupTemplate } from './view/site-popup-element-view';
-import { createSiteStatTemplate } from './view/site-statistick-view';
+import { createButtonShowMoreTemplate } from './view/button-show-view';
+import { createPopupTemplate } from './view/site-popup-view';
+import { createSiteStatTemplate } from './view/site-statistick-card-view';
 import { renderTemplate, RenderPosition } from './render';
 
 const CARD_ELEMENT_SIZE = 5;
@@ -27,4 +27,4 @@ for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
 }
 
 renderTemplate(filmsSection, createButtonShowMoreTemplate(), RenderPosition.BEFOREEND);
-renderTemplate(siteFooter, createPopupTemplate(), RenderPosition.AFTEREND);
+//renderTemplate(siteFooter, createPopupTemplate(), RenderPosition.AFTEREND);
