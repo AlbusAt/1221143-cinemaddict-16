@@ -3,7 +3,7 @@ import { createFilmCardTemplate } from './view/film-card-view';
 import { createUserProfileTemplate } from './view/profile-card-view';
 import { createFilmCardElementsTemplate } from './view/movie-card-view';
 import { createButtonShowMoreTemplate } from './view/button-show-view';
-import { createPopupTemplate } from './view/site-popup-view';
+//import { createPopupTemplate } from './view/site-popup-view';
 import { createSiteStatTemplate } from './view/site-statistick-card-view';
 import { renderTemplate, RenderPosition } from './render';
 
