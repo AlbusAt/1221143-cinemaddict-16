@@ -29,3 +29,8 @@ const FILMS_DESCRIPTIONS = [
   'In rutrum ac purus sit amet tempus.'
 ];
 
+export {
+  FILM_TITLE,
+  FILMS_POSTERS,
+  FILMS_DESCRIPTIONS,
+};
