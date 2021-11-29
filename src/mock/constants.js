@@ -41,10 +41,10 @@ const FILMS_GENRES = [
 ];
 
 const EMOJI_COMMENTS = [
-  'images/emoji/angry.png',
-  'images/emoji/puke.png',
-  'images/emoji/sleeping.png',
-  'images/emoji/smile.png',
+  'angry',
+  'puke',
+  'sleeping',
+  'smile',
 ];
 
 const AVTOR_COMMENTS = [
@@ -52,6 +52,54 @@ const AVTOR_COMMENTS = [
   'Никита',
   'Сергей',
   'Дмитрий',
+];
+
+const FILM_DIRECTORS = [
+  'Ida Lupino',
+  'Bong Joon Ho',
+  'Guillermo del Toro',
+  'David Cronenberg',
+  'Sidney Lumet',
+  'Woody Allen',
+  'Kathryn Bigelow',
+];
+
+const FILMS_WRITERS = [
+  'Ola Balogun',
+  'Biyi Bandele',
+  'Nicole Asinugo',
+  'Jude Idada',
+  'Kehinde Olorunyomi',
+  'Tade Ogidan',
+  'Chika Anadu',
+  'Jeffrey Musa',
+  'Kemi Adesoye',
+  'Chet Anekwe',
+];
+
+const FILMS_ACTORS = [
+  'Casey Affleck',
+  'Adam Driver',
+  'Michael Keaton',
+  'Rami Malek',
+  'Gary Oldman',
+  'Chiwetel Ejiofor',
+  'Kerry Armstrong',
+  'Wendy Hughes',
+  'Angourie Rice',
+  'Sacha Horler',
+  'Noni Hazlehurst',
+  'Rose Byrne',
+  'Sheila Florance',
+];
+
+const FILMS_COUNTRIES = [
+  'USA',
+  'Brazil',
+  'Russia',
+  'China',
+  'Australia',
+  'France',
 ];
 
 const DEFAULT_FILMS_COUNT = 5;
@@ -63,6 +111,8 @@ const MAX_YEAR_DATE = 36;
 const MAX_DURATION_HOUR = 2;
 const MAX_DURATION_MINUTES = 59;
 const MAX_RATING_NUMBER = 10;
+const DEFAFAUL_SEVERAL_SIZE = 3;
+const MAX_AGE_RESTRICTION = 18;
 const DEFAULT_DATE_FORMAT = 'DD MMMM YYYY';
 
 
@@ -83,4 +133,10 @@ export {
   FILMS_GENRES,
   EMOJI_COMMENTS,
   AVTOR_COMMENTS,
+  FILM_DIRECTORS,
+  FILMS_WRITERS,
+  DEFAFAUL_SEVERAL_SIZE,
+  FILMS_ACTORS,
+  FILMS_COUNTRIES,
+  MAX_AGE_RESTRICTION,
 };

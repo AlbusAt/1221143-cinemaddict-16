@@ -6,6 +6,11 @@ import {
   getRandomDuration,
   getRandomRating,
   getRandomGenre,
+  getRandomDirecotr,
+  getRandomWriters,
+  getRandomActors,
+  getRandomCountres,
+  getRandomAgeRating,
 } from './random';
 
 const generateFilmCard = () => {
@@ -20,6 +25,11 @@ const generateFilmCard = () => {
     duration: getRandomDuration(),
     rating: getRandomRating(),
     genre: getRandomGenre(),
+    director: getRandomDirecotr(),
+    writer: getRandomWriters(),
+    actor: getRandomActors(),
+    country: getRandomCountres(),
+    age: getRandomAgeRating(),
   };
 };
 
