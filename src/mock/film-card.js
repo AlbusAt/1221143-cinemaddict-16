@@ -11,6 +11,7 @@ import {
   getRandomActors,
   getRandomCountres,
   getRandomAgeRating,
+  getRandomBoolean,
 } from './random';
 
 const generateFilmCard = () => {
@@ -30,6 +31,9 @@ const generateFilmCard = () => {
     actor: getRandomActors(),
     country: getRandomCountres(),
     age: getRandomAgeRating(),
+    isInWatchlist: getRandomBoolean(),
+    isWatched: getRandomBoolean(),
+    isFavorite: getRandomBoolean(),
   };
 };
 

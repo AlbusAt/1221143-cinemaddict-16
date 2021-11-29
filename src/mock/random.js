@@ -72,6 +72,7 @@ const getRandomWriters = () => randoms(FILMS_WRITERS, DEFAFAUL_SEVERAL_SIZE);
 const getRandomActors = () => randoms(FILMS_ACTORS, DEFAFAUL_SEVERAL_SIZE);
 const getRandomCountres = () => arrayRandElement(FILMS_COUNTRIES, DEFAFAUL_SEVERAL_SIZE);
 const getRandomAgeRating = () => getRandomNumber(DEFAULT_MIN_NUMBER, MAX_AGE_RESTRICTION);
+const getRandomBoolean = () => getRandomNumber(DEFAULT_MIN_NUMBER, DEFAULT_MAX_NUMBER);
 
 export {
   getRandomTitle,
@@ -89,6 +90,7 @@ export {
   getRandomActors,
   getRandomCountres,
   getRandomAgeRating,
+  getRandomBoolean,
 };
 
 
