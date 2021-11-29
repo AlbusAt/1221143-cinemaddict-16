@@ -6,12 +6,15 @@ import { createButtonShowMoreTemplate } from './view/button-show-view';
 import { createPopupTemplate } from './view/site-popup-view';
 import { createSiteStatTemplate } from './view/site-statistick-card-view';
 import { renderTemplate, RenderPosition } from './render';
+import { generateListFilm } from './mock/film-list';
 
 const CARD_ELEMENT_SIZE = 5;
 
 const siteMainElement = document.querySelector('.main');
 const siteHeader = document.querySelector('.header');
 const siteFooter = document.querySelector('.footer');
+
+const tasks = generateListFilm();
 
 renderTemplate(siteHeader, createUserProfileTemplate(), RenderPosition.BEFOREEND);
 renderTemplate(siteMainElement, createSiteMenuTemplate(), RenderPosition.AFTERBEGIN);
@@ -23,7 +26,7 @@ const filmsSection = siteMainElement.querySelector('.films');
 const filmsListContainer = siteMainElement.querySelector('.films-list__container');
 
 for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
-  renderTemplate(filmsListContainer, createFilmCardElementsTemplate(), RenderPosition.BEFOREEND);
+  renderTemplate(filmsListContainer, createFilmCardElementsTemplate(tasks[i]), RenderPosition.BEFOREEND);
 }
 
 renderTemplate(filmsSection, createButtonShowMoreTemplate(), RenderPosition.BEFOREEND);

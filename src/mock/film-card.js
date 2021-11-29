@@ -2,6 +2,7 @@ import {
   getRandomPoster,
   getRandomTitle,
   getRandomDescription,
+  getRandomFormatDate,
 } from './random';
 
 const generateFilmCard = () => {
@@ -11,6 +12,7 @@ const generateFilmCard = () => {
     poster: getRandomPoster(),
     title,
     description: getRandomDescription(),
+    releaseFilm: getRandomFormatDate(),
   };
 };
 
