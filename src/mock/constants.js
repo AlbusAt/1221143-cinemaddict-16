@@ -29,11 +29,40 @@ const FILMS_DESCRIPTIONS = [
   'In rutrum ac purus sit amet tempus.'
 ];
 
+const FILMS_GENRES = [
+  'action',
+  'adventure',
+  'comedy',
+  'drama',
+  'fantasy',
+  'horror',
+  'thriller',
+  'carton',
+];
+
+const EMOJI_COMMENTS = [
+  'images/emoji/angry.png',
+  'images/emoji/puke.png',
+  'images/emoji/sleeping.png',
+  'images/emoji/smile.png',
+];
+
+const AVTOR_COMMENTS = [
+  'Алексей',
+  'Никита',
+  'Сергей',
+  'Дмитрий',
+];
+
 const DEFAULT_FILMS_COUNT = 5;
 const DEFAULT_MIN_NUMBER = 0;
 const DEFAULT_MAX_NUMBER = 1;
 const DEFAULT_ROUND_NUMBER = 0;
+const DEFAULT_ROUND_RATING = 1;
 const MAX_YEAR_DATE = 36;
+const MAX_DURATION_HOUR = 2;
+const MAX_DURATION_MINUTES = 59;
+const MAX_RATING_NUMBER = 10;
 const DEFAULT_DATE_FORMAT = 'DD MMMM YYYY';
 
 
@@ -47,4 +76,11 @@ export {
   DEFAULT_ROUND_NUMBER,
   MAX_YEAR_DATE,
   DEFAULT_DATE_FORMAT,
+  MAX_DURATION_HOUR,
+  MAX_DURATION_MINUTES,
+  MAX_RATING_NUMBER,
+  DEFAULT_ROUND_RATING,
+  FILMS_GENRES,
+  EMOJI_COMMENTS,
+  AVTOR_COMMENTS,
 };

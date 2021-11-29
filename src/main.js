@@ -1,7 +1,7 @@
 import { createSiteMenuTemplate } from './view/site-menu-view';
 import { createFilmCardTemplate } from './view/film-card-view';
 import { createUserProfileTemplate } from './view/profile-card-view';
-import { createFilmCardElementsTemplate } from './view/movie-card-view';
+import { createFilmCardElementsTemplate } from './view/film-card-elements-view';
 import { createButtonShowMoreTemplate } from './view/button-show-view';
 //import { createPopupTemplate } from './view/site-popup-view';
 import { createSiteStatTemplate } from './view/site-statistick-card-view';
@@ -15,6 +15,7 @@ const siteHeader = document.querySelector('.header');
 const siteFooter = document.querySelector('.footer');
 
 const tasks = generateListFilm();
+console.log(tasks);
 
 renderTemplate(siteHeader, createUserProfileTemplate(), RenderPosition.BEFOREEND);
 renderTemplate(siteMainElement, createSiteMenuTemplate(), RenderPosition.AFTERBEGIN);
