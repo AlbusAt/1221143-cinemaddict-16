@@ -1,26 +1,29 @@
-export const extraFilmList = (task) => {
-  const {poster,mainTitle,description,releaseFilm, duration, rating, genre} = task;
+import { createFilmCardElementsTemplate } from './film-card-elements-view';
+import { generateListFilm } from '../mock/film-list';
+import { arrayRandElement } from '../mock/random';
 
-  return `
-  <div class="films-list__container">
-    <article class="film-card">
-      <a class="film-card__link">
-      <h3 class="film-card__title">${mainTitle}</h3>
-      <p class="film-card__rating">${rating}</p>
-      <p class="film-card__info">
-        <span class="film-card__year">${releaseFilm}</span>
-        <span class="film-card__duration">${duration}</span>
-        <span class="film-card__genre">${genre}</span>
-      </p>
-      <img src="${poster}" alt="" class="film-card__poster">
-      <p class="film-card__description">${description}</p>
-      <span class="film-card__comments">0 comments</span>
-      </a>
-      <div class="film-card__controls">
-        <button class="film-card__controls-item film-card__controls-item--add-to-watchlist" type="button">Add to watchlist</button>
-        <button class="film-card__controls-item film-card__controls-item--mark-as-watched film-card__controls-item--active" type="button">Mark as watched</button>
-        <button class="film-card__controls-item film-card__controls-item--favorite" type="button">Mark as favorite</button>
+function getRandomTask () {
+  return arrayRandElement(generateListFilm());
+}
+
+const extraFilmList = () => `
+  <section class="films-list films-list--extra">
+      <h2 class="films-list__title">Top rated</h2>
+      <div class="films-list__container">
+      ${createFilmCardElementsTemplate(getRandomTask())}
+      ${createFilmCardElementsTemplate(getRandomTask())}
       </div>
-    </article>`;
-};
+    </section>
 
+    <section class="films-list films-list--extra">
+      <h2 class="films-list__title">Most commented</h2>
+      <div class="films-list__container">
+      ${createFilmCardElementsTemplate(getRandomTask())}
+      ${createFilmCardElementsTemplate(getRandomTask())}
+      </div>
+    </section>`;
+
+export {
+  getRandomTask,
+  extraFilmList
+};

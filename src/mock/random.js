@@ -91,6 +91,7 @@ export {
   getRandomCountres,
   getRandomAgeRating,
   getRandomBoolean,
+  arrayRandElement,
 };
 
 

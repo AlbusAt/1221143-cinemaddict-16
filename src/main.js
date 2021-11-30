@@ -8,7 +8,7 @@ import { createSiteStatTemplate } from './view/site-statistick-card-view';
 import { renderTemplate, RenderPosition } from './render';
 import { getSortTemplate } from './view/site-sort-view';
 import { generateListFilm } from './mock/film-list';
-import { extraFilmList } from './view/extra-film-view';
+import { extraFilmList, getRandomTask } from './view/extra-film-view';
 //import { generateComments } from './mock/film-list';
 import {
   normalizeFilmList,
@@ -33,7 +33,6 @@ const inWatchListFilms = filterWatchingFilms(films);
 const isWatchedFilms = filterWatchedFilms(films);
 const isFavoriteFilms = filterFavoriteFilms(films);
 
-
 renderTemplate(siteHeader, createUserProfileTemplate(), RenderPosition.BEFOREEND);
 renderTemplate(siteMainElement, createSiteMenuTemplate(inWatchListFilms.length, isWatchedFilms.length, isFavoriteFilms.length), RenderPosition.AFTERBEGIN);
 if (filmsCount > 0) {
@@ -55,12 +54,14 @@ renderTemplate(filmsSection, createButtonShowMoreTemplate(), RenderPosition.BEFO
 
 function getMoreFilmList () {
   for (let i = 0; i < PRIORITET_CARD_ELEMENT_SIZE; i++) {
-    renderTemplate(filmsListContainer, createFilmCardElementsTemplate(tasks[i]), RenderPosition.BEFOREEND);
+    renderTemplate(filmsListContainer, createFilmCardElementsTemplate(getRandomTask()), RenderPosition.BEFOREEND);
   }
 }
 
+renderTemplate(filmsSection, extraFilmList(), RenderPosition.BEFOREEND);
+
+
 const buttonShowMore = document.querySelector('.films-list__show-more');
 buttonShowMore.addEventListener('click', getMoreFilmList);
-
 
 export {CARD_ELEMENT_SIZE};
