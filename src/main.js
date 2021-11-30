@@ -2,7 +2,7 @@ import { createSiteMenuTemplate } from './view/site-menu-view';
 import { createFilmCardTemplate } from './view/film-card-view';
 import { createUserProfileTemplate } from './view/user-profile-view';
 import { createFilmCardElementsTemplate } from './view/film-card-elements-view';
-import { createButtonShowMoreTemplate } from './view/button-show-view';
+import { createButtonShowMoreTemplate } from './view/button-show-more-view';
 //import { createPopupTemplate } from './view/site-popup-view';
 import { createSiteStatTemplate } from './view/site-statistick-card-view';
 import { renderTemplate, RenderPosition } from './render';
@@ -50,7 +50,7 @@ const filmsSection = siteMainElement.querySelector('.films');
 const filmsListContainer = siteMainElement.querySelector('.films-list__container');
 
 for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
-  renderTemplate(filmsListContainer, createFilmCardElementsTemplate(tasks[i]), RenderPosition.BEFOREEND);
+  renderTemplate(filmsListContainer, createFilmCardElementsTemplate(getRandomTask()), RenderPosition.BEFOREEND);
 }
 
 renderTemplate(filmsSection, createButtonShowMoreTemplate(), RenderPosition.BEFOREEND);
