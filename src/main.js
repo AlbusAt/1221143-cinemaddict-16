@@ -9,14 +9,16 @@ import { renderTemplate, RenderPosition } from './render';
 import { getSortTemplate } from './view/site-sort-view';
 import { generateListFilm } from './mock/film-list';
 import { extraFilmList, getRandomTask } from './view/extra-film-view';
+import { user } from './mock/user';
 //import { generateComments } from './mock/film-list';
 import {
   normalizeFilmList,
   normalizeArray,
+  normalizeUser,
   filterWatchingFilms,
   filterWatchedFilms,
   filterFavoriteFilms,
-} from './normalize-film';
+} from './normalize';
 
 
 const CARD_ELEMENT_SIZE = 5;
@@ -29,11 +31,12 @@ const siteFooter = document.querySelector('.footer');
 const tasks = generateListFilm();
 const films = normalizeArray(tasks, normalizeFilmList);
 const filmsCount = films.length;
+const taskUser = normalizeUser(user);
 const inWatchListFilms = filterWatchingFilms(films);
 const isWatchedFilms = filterWatchedFilms(films);
 const isFavoriteFilms = filterFavoriteFilms(films);
 
-renderTemplate(siteHeader, createUserProfileTemplate(), RenderPosition.BEFOREEND);
+renderTemplate(siteHeader, createUserProfileTemplate(taskUser));
 renderTemplate(siteMainElement, createSiteMenuTemplate(inWatchListFilms.length, isWatchedFilms.length, isFavoriteFilms.length), RenderPosition.AFTERBEGIN);
 if (filmsCount > 0) {
   renderTemplate(siteMainElement, getSortTemplate(), RenderPosition.BEFOREEND);
