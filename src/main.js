@@ -22,7 +22,8 @@ import {
 
 
 const CARD_ELEMENT_SIZE = 5;
-const PRIORITET_CARD_ELEMENT_SIZE = 5;
+const PRIORITET_CARD_ELEMENT_SIZE = 15;
+let sizeFilmCard = CARD_ELEMENT_SIZE;
 
 const siteMainElement = document.querySelector('.main');
 const siteHeader = document.querySelector('.header');
@@ -55,16 +56,20 @@ for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
 renderTemplate(filmsSection, createButtonShowMoreTemplate(), RenderPosition.BEFOREEND);
 //renderTemplate(siteFooter, createPopupTemplate(generateComments(),tasks[0]), RenderPosition.AFTEREND);
 
+const buttonShowMore = document.querySelector('.films-list__show-more');
+
 function getMoreFilmList () {
-  for (let i = 0; i < PRIORITET_CARD_ELEMENT_SIZE; i++) {
+  for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
     renderTemplate(filmsListContainer, createFilmCardElementsTemplate(getRandomTask()), RenderPosition.BEFOREEND);
+  }
+  sizeFilmCard += CARD_ELEMENT_SIZE;
+  if (sizeFilmCard === PRIORITET_CARD_ELEMENT_SIZE) {
+    buttonShowMore.disabled = true;
   }
 }
 
 renderTemplate(filmsSection, extraFilmList(), RenderPosition.BEFOREEND);
 
-
-const buttonShowMore = document.querySelector('.films-list__show-more');
 buttonShowMore.addEventListener('click', getMoreFilmList);
 
 export {CARD_ELEMENT_SIZE};
