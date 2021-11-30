@@ -1,6 +1,6 @@
 import { createSiteMenuTemplate } from './view/site-menu-view';
 import { createFilmCardTemplate } from './view/film-card-view';
-import { createUserProfileTemplate } from './view/profile-card-view';
+import { createUserProfileTemplate } from './view/user-profile-view';
 import { createFilmCardElementsTemplate } from './view/film-card-elements-view';
 import { createButtonShowMoreTemplate } from './view/button-show-view';
 //import { createPopupTemplate } from './view/site-popup-view';
@@ -41,9 +41,9 @@ renderTemplate(siteMainElement, createSiteMenuTemplate(inWatchListFilms.length, 
 if (filmsCount > 0) {
   renderTemplate(siteMainElement, getSortTemplate(), RenderPosition.BEFOREEND);
 }
-renderTemplate(siteMainElement, createFilmCardTemplate(), RenderPosition.BEFOREEND);
+renderTemplate(siteMainElement, createFilmCardTemplate());
 
-renderTemplate(siteFooter, createSiteStatTemplate(), RenderPosition.AFTEREND);
+renderTemplate(siteFooter, createSiteStatTemplate());
 
 const filmsSection = siteMainElement.querySelector('.films');
 const filmsListContainer = siteMainElement.querySelector('.films-list__container');

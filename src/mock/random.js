@@ -24,6 +24,8 @@ import {
   FILMS_ACTORS,
   FILMS_COUNTRIES,
   MAX_AGE_RESTRICTION,
+  MAX_FILM_COUNT,
+  DEFAULT_FILMS_COUNT,
 } from './constants';
 
 const getRandomNumber = (min = DEFAULT_MIN_NUMBER, max = DEFAULT_MAX_NUMBER, round = DEFAULT_ROUND_NUMBER) => (Math.random() * (Math.max(min, max) - Math.min(min, max))).toFixed(round);
@@ -73,6 +75,7 @@ const getRandomActors = () => randoms(FILMS_ACTORS, DEFAFAUL_SEVERAL_SIZE);
 const getRandomCountres = () => arrayRandElement(FILMS_COUNTRIES, DEFAFAUL_SEVERAL_SIZE);
 const getRandomAgeRating = () => getRandomNumber(DEFAULT_MIN_NUMBER, MAX_AGE_RESTRICTION);
 const getRandomBoolean = () => getRandomNumber(DEFAULT_MIN_NUMBER, DEFAULT_MAX_NUMBER);
+const getRandomFilmCount = () => getRandomNumber(DEFAULT_FILMS_COUNT, MAX_FILM_COUNT);
 
 export {
   getRandomTitle,
@@ -92,6 +95,7 @@ export {
   getRandomAgeRating,
   getRandomBoolean,
   arrayRandElement,
+  getRandomFilmCount,
 };
 
 

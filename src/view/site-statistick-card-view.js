@@ -1,6 +1,7 @@
+import { getRandomFilmCount } from '../mock/random';
 export const createSiteStatTemplate = () => (
-  `<section class="footer__logo logo logo--smaller">Cinemaddict</section>
+  `<section class="footer__logo logo logo--smaller"></section>
     <section class="footer__statistics">
-      <p>130 291 movies inside</p>
+      <p>${getRandomFilmCount()} movies inside</p>
     </section>`
 );
