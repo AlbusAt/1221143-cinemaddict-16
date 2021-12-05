@@ -1,4 +1,4 @@
-import { createSiteMenuTemplate } from './view/site-menu-view';
+import SiteMenuView from './view/site-menu-view';
 import FilmCardView from './view/film-card-view';
 import { createUserProfileTemplate } from './view/user-profile-view';
 import { createFilmCardElementsTemplate } from './view/film-card-elements-view';
@@ -34,13 +34,13 @@ const tasks = generateListFilm();
 const films = normalizeArray(tasks, normalizeFilmList);
 const filmsCount = films.length;
 const taskUser = normalizeUser(user);
-const inWatchListFilms = filterWatchingFilms(films);
-const isWatchedFilms = filterWatchedFilms(films);
-const isFavoriteFilms = filterFavoriteFilms(films);
+const inWatchListFilms = filterWatchingFilms(films).length;
+const isWatchedFilms = filterWatchedFilms(films).length;
+const isFavoriteFilms = filterFavoriteFilms(films).length;
 
 renderTemplate(siteHeader, createUserProfileTemplate(taskUser));
 
-renderTemplate(siteMainElement, createSiteMenuTemplate(inWatchListFilms.length, isWatchedFilms.length, isFavoriteFilms.length), RenderPosition.AFTERBEGIN);
+renderElement(siteMainElement, new SiteMenuView().element, RenderPosition.AFTERBEGIN);
 
 if (filmsCount > 0) {
   renderTemplate(siteMainElement, new SortTemplate().template, RenderPosition.BEFOREEND);
@@ -76,4 +76,8 @@ renderTemplate(filmsSection, extraFilmList(), RenderPosition.BEFOREEND);
 
 buttonShowMore.addEventListener('click', getMoreFilmList);
 
-export {CARD_ELEMENT_SIZE};
+export {CARD_ELEMENT_SIZE,
+  inWatchListFilms,
+  isWatchedFilms,
+  isFavoriteFilms,
+};
