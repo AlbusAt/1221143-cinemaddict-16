@@ -5,11 +5,7 @@ export const RenderPosition = {
   AFTEREND: 'afterend',
 };
 
-export const renderTemplate = (container, template, place = RenderPosition.BEFOREEND) => {
-  container.insertAdjacentHTML(place, template);
-};
-
-export const renderElement = (container, element, place) => {
+export const render = (container, element, place) => {
   switch (place) {
     case RenderPosition.BEFOREBEGIN:
       container.before(element);
@@ -26,10 +22,6 @@ export const renderElement = (container, element, place) => {
   }
 };
 
-// Принцип работы прост:
-// 1. создаём пустой div-блок
-// 2. берём HTML в виде строки и вкладываем в этот div-блок, превращая в DOM-элемент
-// 3. возвращаем этот DOM-элемент
 export const createElement = (template) => {
   const newElement = document.createElement('div'); // 1
   newElement.innerHTML = template; // 2
