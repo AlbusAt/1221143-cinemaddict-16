@@ -9,7 +9,7 @@ import SortTemplate from './view/site-sort-view';
 import { generateListFilm, getRandomTasks } from './mock/film-list';
 import ExtraMostListView from './view/extra-most-rate-view';
 import ExtraTopListView from './view/extra-top-stat-view';
-import PopupTemplate from './view/site-popup-view';
+//import PopupTemplate from './view/site-popup-view';
 import { user } from './mock/user';
 import {
   normalizeFilmList,
@@ -60,7 +60,7 @@ for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
 renderElement(filmsSection, new ButtonShowMore().element, RenderPosition.BEFOREEND);
 
 
-renderElement(siteFooter, new PopupTemplate(tasks[0]).element, RenderPosition.AFTEREND);
+//renderElement(siteFooter, new PopupTemplate(tasks[0]).element, RenderPosition.AFTEREND);
 
 const buttonShowMore = document.querySelector('.films-list__show-more');
 
