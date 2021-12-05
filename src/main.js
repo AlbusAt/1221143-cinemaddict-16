@@ -3,14 +3,14 @@ import FilmCardView from './view/film-card-view';
 import { createUserProfileTemplate } from './view/user-profile-view';
 import FilmCardElement from './view/film-card-elements-view';
 import ButtonShowMore from './view/button-show-more-view';
-//import { createPopupTemplate } from './view/site-popup-view';
 import { createSiteStatTemplate } from './view/site-statistick-card-view';
 import { renderTemplate, renderElement, RenderPosition } from './render';
 import SortTemplate from './view/site-sort-view';
-import { generateListFilm } from './mock/film-list';
-import { extraFilmList, getRandomTask } from './view/extra-film-view';
+import { generateListFilm, getRandomTasks } from './mock/film-list';
+import ExtraMostListView from './view/extra-most-rate-view';
+import ExtraTopListView from './view/extra-top-stat-view';
+import PopupTemplate from './view/site-popup-view';
 import { user } from './mock/user';
-//import { generateComments } from './mock/film-list';
 import {
   normalizeFilmList,
   normalizeArray,
@@ -54,17 +54,19 @@ const filmsSection = siteMainElement.querySelector('.films');
 const filmsListContainer = siteMainElement.querySelector('.films-list__container');
 
 for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
-  renderElement(filmsListContainer, new FilmCardElement(getRandomTask()).element, RenderPosition.BEFOREEND);
+  renderElement(filmsListContainer, new FilmCardElement(getRandomTasks()).element, RenderPosition.BEFOREEND);
 }
 
 renderElement(filmsSection, new ButtonShowMore().element, RenderPosition.BEFOREEND);
-//renderTemplate(siteFooter, createPopupTemplate(generateComments(),tasks[0]), RenderPosition.AFTEREND);
+
+
+renderElement(siteFooter, new PopupTemplate(tasks[0]).element, RenderPosition.AFTEREND);
 
 const buttonShowMore = document.querySelector('.films-list__show-more');
 
 function getMoreFilmList () {
   for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
-    renderElement(filmsListContainer, new FilmCardElement(getRandomTask()).element, RenderPosition.BEFOREEND);
+    renderElement(filmsListContainer, new FilmCardElement(getRandomTasks()).element, RenderPosition.BEFOREEND);
   }
   sizeFilmCard += CARD_ELEMENT_SIZE;
   if (sizeFilmCard === PRIORITET_CARD_ELEMENT_SIZE) {
@@ -72,7 +74,8 @@ function getMoreFilmList () {
   }
 }
 
-renderTemplate(filmsSection, extraFilmList(), RenderPosition.BEFOREEND);
+renderElement(filmsSection, new ExtraTopListView().element, RenderPosition.BEFOREEND);
+renderElement(filmsSection, new ExtraMostListView().element, RenderPosition.BEFOREEND);
 
 buttonShowMore.addEventListener('click', getMoreFilmList);
 
