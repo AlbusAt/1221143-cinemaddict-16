@@ -1,3 +1,5 @@
+import { createElement } from '../render';
+
 export const createFilmCardElementsTemplate = (task) => {
   const {poster,mainTitle,description,releaseFilm, duration, rating, genre} = task;
 
@@ -21,3 +23,28 @@ export const createFilmCardElementsTemplate = (task) => {
         </div>
   </article>`;
 };
+
+export default class FilmCardElement {
+  #element = null;
+  #task = null;
+
+  constructor(task) {
+    this.#task = task;
+  }
+
+  get element() {
+    if (!this.#element) {
+      this.#element = createElement(this.template);
+    }
+
+    return this.#element;
+  }
+
+  get template() {
+    return createFilmCardElementsTemplate(this.#task);
+  }
+
+  removeElement() {
+    this.#element = null;
+  }
+}
