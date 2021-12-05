@@ -1,12 +1,12 @@
 import { createSiteMenuTemplate } from './view/site-menu-view';
-import { createFilmCardTemplate } from './view/film-card-view';
+import FilmCardView from './view/film-card-view';
 import { createUserProfileTemplate } from './view/user-profile-view';
 import { createFilmCardElementsTemplate } from './view/film-card-elements-view';
-import { createButtonShowMoreTemplate } from './view/button-show-more-view';
+import ButtonShowMore from './view/button-show-more-view';
 //import { createPopupTemplate } from './view/site-popup-view';
 import { createSiteStatTemplate } from './view/site-statistick-card-view';
-import { renderTemplate, RenderPosition } from './render';
-import { getSortTemplate } from './view/site-sort-view';
+import { renderTemplate, renderElement, RenderPosition } from './render';
+import SortTemplate from './view/site-sort-view';
 import { generateListFilm } from './mock/film-list';
 import { extraFilmList, getRandomTask } from './view/extra-film-view';
 import { user } from './mock/user';
@@ -29,6 +29,7 @@ const siteMainElement = document.querySelector('.main');
 const siteHeader = document.querySelector('.header');
 const siteFooter = document.querySelector('.footer');
 
+
 const tasks = generateListFilm();
 const films = normalizeArray(tasks, normalizeFilmList);
 const filmsCount = films.length;
@@ -38,11 +39,14 @@ const isWatchedFilms = filterWatchedFilms(films);
 const isFavoriteFilms = filterFavoriteFilms(films);
 
 renderTemplate(siteHeader, createUserProfileTemplate(taskUser));
+
 renderTemplate(siteMainElement, createSiteMenuTemplate(inWatchListFilms.length, isWatchedFilms.length, isFavoriteFilms.length), RenderPosition.AFTERBEGIN);
+
 if (filmsCount > 0) {
-  renderTemplate(siteMainElement, getSortTemplate(), RenderPosition.BEFOREEND);
+  renderTemplate(siteMainElement, new SortTemplate().template, RenderPosition.BEFOREEND);
 }
-renderTemplate(siteMainElement, createFilmCardTemplate());
+
+renderElement(siteMainElement, new FilmCardView().element, RenderPosition.BEFOREEND);
 
 renderTemplate(siteFooter, createSiteStatTemplate());
 
@@ -53,7 +57,7 @@ for (let i = 0; i < CARD_ELEMENT_SIZE; i++) {
   renderTemplate(filmsListContainer, createFilmCardElementsTemplate(getRandomTask()), RenderPosition.BEFOREEND);
 }
 
-renderTemplate(filmsSection, createButtonShowMoreTemplate(), RenderPosition.BEFOREEND);
+renderElement(filmsSection, new ButtonShowMore().element, RenderPosition.BEFOREEND);
 //renderTemplate(siteFooter, createPopupTemplate(generateComments(),tasks[0]), RenderPosition.AFTEREND);
 
 const buttonShowMore = document.querySelector('.films-list__show-more');
