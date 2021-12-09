@@ -7,8 +7,8 @@ import SiteStatTemplate from './view/site-statistick-card-view';
 import { render, RenderPosition } from './render';
 import SortTemplate from './view/site-sort-view';
 import { generateListFilm, getRandomTasks } from './mock/film-list';
-import ExtraMostListView from './view/extra-most-rate-view';
-import ExtraTopListView from './view/extra-top-stat-view';
+import ExtraMostListView from './view/extra-list-view';
+import ExtraTopListView from './view/extra-list-view';
 import PopupTemplate from './view/site-popup-view';
 import { user } from './mock/user';
 import {

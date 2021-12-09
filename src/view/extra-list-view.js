@@ -12,8 +12,18 @@ const extraMostListView = () =>
       </div>
     </section>`;
 
-export default class ExtraMostListView {
+const extraTopList = () =>
+  `<section class="films-list films-list--extra">
+    <h2 class="films-list__title">Top rated</h2>
+    <div class="films-list__container">
+      ${new FilmCardElement(getRandomTasks()).template}
+      ${new FilmCardElement(getRandomTasks()).template}
+    </div>
+  </section>`;
+
+class ExtraListView {
   #element = null;
+  _task = null;
 
   get element() {
     if (!this.#element) {
@@ -24,10 +34,18 @@ export default class ExtraMostListView {
   }
 
   get template() {
-    return extraMostListView();
+    return this._task;
   }
 
   removeElement() {
     this.#element = null;
   }
+}
+
+export default class ExtraMostListView extends ExtraListView {
+  _task = extraMostListView();
+}
+
+export class ExtraTopListView extends ExtraListView {
+  _task = extraTopList()
 }
