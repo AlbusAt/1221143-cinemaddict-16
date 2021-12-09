@@ -3,7 +3,7 @@ import dayjsRandom from 'dayjs-random';
 dayjs.extend(dayjsRandom);
 
 import {
-  FILM_TITLE,
+  FILM_TITLES,
   FILMS_DESCRIPTIONS,
   FILMS_POSTERS,
   DEFAULT_MAX_NUMBER,
@@ -59,7 +59,7 @@ function arrayRandElement(arr) {
   return arr[rand];
 }
 
-const getRandomTitle = () => arrayRandElement(FILM_TITLE);
+const getRandomTitle = () => arrayRandElement(FILM_TITLES);
 const getRandomDescription = () => arrayRandElement(FILMS_DESCRIPTIONS);
 const getRandomPoster = () => arrayRandElement(FILMS_POSTERS);
 const getRandomDate = () => dayjs.between(dayjs().add(-getRandomNumber(DEFAULT_MIN_NUMBER, MAX_YEAR_DATE), 'year'), dayjs().add(-getRandomNumber(DEFAULT_MIN_NUMBER, MAX_YEAR_DATE), 'year'));
