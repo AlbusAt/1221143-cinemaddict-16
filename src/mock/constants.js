@@ -1,4 +1,4 @@
-const FILM_TITLE = [
+const FILM_TITLES = [
   'Watch Mad for Each Other',
   'Popeye the Sailor Meets Sindbad',
   'Sagebrush Trail',
@@ -119,7 +119,7 @@ const DEFAULT_DATE_FORMAT = 'DD MMMM YYYY';
 
 
 export {
-  FILM_TITLE,
+  FILM_TITLES,
   FILMS_POSTERS,
   FILMS_DESCRIPTIONS,
   DEFAULT_FILMS_COUNT,
