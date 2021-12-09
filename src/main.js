@@ -35,8 +35,8 @@ const films = normalizeArray(tasks, normalizeFilmList);
 const filmsCount = films.length;
 const taskUser = normalizeUser(user);
 const inWatchListFilms = filterWatchingFilms(films).length;
-const isWatchedFilms = filterWatchedFilms(films).length;
-const isFavoriteFilms = filterFavoriteFilms(films).length;
+const inWatchedFilms = filterWatchedFilms(films).length;
+const inFavoriteFilms = filterFavoriteFilms(films).length;
 
 render(siteHeader, new UserProfileTemplate(taskUser).element, RenderPosition.BEFOREEND);
 render(siteMainElement, new SiteMenuView().element, RenderPosition.AFTERBEGIN);
@@ -117,6 +117,6 @@ buttonShowMore.addEventListener('click', getMoreFilmList);
 export {
   CARD_ELEMENT_SIZE,
   inWatchListFilms,
-  isWatchedFilms,
-  isFavoriteFilms,
+  inWatchedFilms,
+  inFavoriteFilms,
 };
