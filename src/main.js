@@ -4,12 +4,13 @@ import UserProfileTemplate from './view/user-profile-view';
 import FilmCardElement from './view/film-card-elements-view';
 import ButtonShowMore from './view/button-show-more-view';
 import SiteStatTemplate from './view/site-statistick-card-view';
-import { render, RenderPosition } from './render';
 import SortTemplate from './view/site-sort-view';
-import { generateListFilm, getRandomTasks } from './mock/film-list';
 import ExtraMostListView from './view/extra-list-view';
 import ExtraTopListView from './view/extra-list-view';
 import PopupTemplate from './view/site-popup-view';
+import NoFilmsView from './view/no-films-view';
+import { generateListFilm, getRandomTasks } from './mock/film-list';
+import { render, RenderPosition } from './render';
 import { user } from './mock/user';
 import {
   normalizeFilmList,
@@ -43,9 +44,11 @@ render(siteMainElement, new SiteMenuView().element, RenderPosition.AFTERBEGIN);
 
 if (filmsCount > 0) {
   render(siteMainElement, new SortTemplate().element, RenderPosition.BEFOREEND);
+  render(siteMainElement, new FilmCardView().element, RenderPosition.BEFOREEND);
+} else {
+  render(siteMainElement, new NoFilmsView().element, RenderPosition.BEFOREEND);
 }
 
-render(siteMainElement, new FilmCardView().element, RenderPosition.BEFOREEND);
 render(siteFooter, new SiteStatTemplate().element, RenderPosition.BEFOREEND);
 
 const filmsSection = siteMainElement.querySelector('.films');
